@@ -1,0 +1,25 @@
+{
+  "name": "twitch-info",
+  "version": "1.0.0",
+  "description": "npx cli utility to quickly look up twitch information",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npx",
+    "npm",
+    "twitch"
+  ],
+  "author": "Erik Guzman (https://twitch.tv/talk2megooseman)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^4.0.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
