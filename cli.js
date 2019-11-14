@@ -8,19 +8,18 @@ const { URL, URLSearchParams } = require('url');
 const clientId = 'jwpse7kaeqzems1n3f0cmg0ltwxi8r';
 const HELIX_BASE_URL = 'https://api.twitch.tv/helix/';
 
-// program
-// .name('firestore-backup-restore')
-// .usage('you can import JSON data into your Firestore DB or export JSON data from your Firestore DB. You are required to have generated a service account file and specify you Firestore DB URL')
-// .requiredOption('-u, --url <https://database-url.com>', 'Database URL for your Firestore')
-// .option('-c, --creds <file_path>', 'file path to your Firestore credentials', './serviceAccountKey.json');
+program
+  .version('1.0.0')
+  .name('twitch-info')
+  .usage('CLI tool for easily retrieve Twitch info using npx');
 
 program
   .command('clips')
-  .description('run setup commands for all envs')
-  .option('-b, --broadcaster_id <id>', '')
-  .option('-g, --game_id <id>', '')
-  .option('-c, --clip_id <id>', '')
-  .option('-f, --first <number>', '')
+  .description('Get clips info from broadcaster_id, game_id, or specific clip_id')
+  .option('-b, --broadcaster_id <id>', 'Get by broadcaster ID')
+  .option('-g, --game_id <id>', 'Get by game ID')
+  .option('-c, --clip_id <id>', 'Get specific clip ID')
+  .option('-f, --first <number>', 'Number of clips to return, limit 100', 20)
   .action((commandOptions) => {
     const params = new URLSearchParams();
 
@@ -41,9 +40,9 @@ program
 
 program
   .command('users')
-  .description('run setup commands for all envs')
-  .option('-i, --id <id>', '')
-  .option('-l, --login <string>', '')
+  .description('Get Twitch users information by ID or Login name')
+  .option('-i, --id <id>', 'Get info by user ID')
+  .option('-l, --login <string>', 'Get info by user login name')
   .action((commandOptions) => {
     const params = new URLSearchParams();
 
@@ -57,6 +56,11 @@ program
   });
 
 program.parse(process.argv);
+
+// If not commands specified display help
+if (!process.argv.slice(2).length) {
+  program.help();
+}
 
 function helixRequest(path, params = null) {
   const url = new URL(HELIX_BASE_URL + path);
