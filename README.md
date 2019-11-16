@@ -1,5 +1,4 @@
 # twitch-info
-More commands to come!!!!
 
 ```
 npx twitch-info <command> [options]
