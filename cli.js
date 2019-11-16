@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const yargs = require('yargs');
-const TwitchAPI = require('./twitch-api');
 
 // eslint-disable-next-line no-unused-expressions
 yargs.commandDir('cmds')
