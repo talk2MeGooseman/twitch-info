@@ -5,15 +5,48 @@ npx twitch-info <command> [options]
 ```
 
 ```
-Usage: twitch-info CLI tool for easily retrieve Twitch info using npx
-
-Options:
-  -V, --version    output the version number
-  -h, --help       output usage information
+Quickly look up information from the Twitch API using the CLI tool.
+Usage: twitch-info <command> [options]
 
 Commands:
-  clips [options]  Get clips info from broadcaster_id, game_id, or specific clip_id
-  users [options]  Get Twitch users information by ID or Login name
+  twitch-info clips             Gets clip information by clip ID, broadcaster
+                                ID, or game ID.
+  twitch-info games             Gets clip information by clip ID, broadcaster
+                                ID, or game ID.
+  twitch-info streams-metadata  Gets information about active streams. Streams
+                                are returned sorted by number of current
+                                viewers, in descending order. Across multiple
+                                pages of results, there may be duplicate or
+                                missing streams, as viewers join and leave
+                                streams.
+  twitch-info streams           Gets information about active streams. Streams
+                                are returned sorted by number of current
+                                viewers, in descending order. Across multiple
+                                pages of results, there may be duplicate or
+                                missing streams, as viewers join and leave
+                                streams.
+  twitch-info top-games         Gets games sorted by number of current viewers
+                                on Twitch, most popular first.
+  twitch-info users-extensions  Gets games sorted by number of current viewers
+                                on Twitch, most popular first.
+  twitch-info user-follows      Gets information on follow relationships between
+                                two Twitch users. Information returned is sorted
+                                in order, most recent follow first. This can
+                                return information like “who is lirik
+                                following,” “who is following lirik,” or “is
+                                user X following user Y.
+  twitch-info users             Gets information about one or more specified
+                                Twitch users.
+  twitch-info videos            Gets games sorted by number of current viewers
+                                on Twitch, most popular first.
+
+Options:
+  --version   Show version number                                      [boolean]
+  -h, --help  Show help                                                [boolean]
+
+Examples:
+  twitch-info users -l talk2megooseman  return the users information
+  twitch-info user-follows --help       print user-follows command information
 ```
 
 ## Clips
