@@ -1,4 +1,5 @@
 # twitch-info
+![Example of npx twitch-info users --login talk2megooseman](https://i.imgur.com/6uOGua9.png)
 
 ```
 npx twitch-info <command> [options]
