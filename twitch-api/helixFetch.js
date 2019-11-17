@@ -16,7 +16,6 @@ module.exports = function helixFetch(path, params = null) {
 
   if (url) {
     url.search = new URLSearchParams(params).toString();
-
   }
   fetch(url, {
     headers: {

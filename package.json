@@ -11,7 +11,8 @@
     "url": "git+https://github.com/talk2megooseman/twitch-info.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./",
+    "lint-fix": "eslint ./ --fix"
   },
   "keywords": [
     "npx",
@@ -32,6 +33,7 @@
     "yargs": "^14.2.0"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.6.5",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2"
