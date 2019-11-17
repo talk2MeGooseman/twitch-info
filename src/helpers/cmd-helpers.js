@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 const yargs = require('yargs');
+const { URLSearchParams } = require('url');
 
 /**
  * Builds params object from reqOptions and options
