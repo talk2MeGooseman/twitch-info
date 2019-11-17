@@ -10,11 +10,12 @@ exports.builder = {
   },
   name: {
     alias: 'n',
-    description: 'Game name. The name must be an exact match. For instance, “Pokemon” will not return a list of Pokemon games; instead, query the specific Pokemon game(s) in which you are interested.',
+    description:
+      'Game name. The name must be an exact match. For instance, “Pokemon” will not return a list of Pokemon games; instead, query the specific Pokemon game(s) in which you are interested.',
     type: 'string',
   },
 };
-exports.handler = (argv) => {
+exports.handler = argv => {
   const requiredOptions = Object.keys(exports.builder);
 
   const params = cmdHelpers.buildParams(argv, requiredOptions);

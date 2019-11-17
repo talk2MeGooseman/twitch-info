@@ -14,7 +14,7 @@ exports.builder = {
     type: 'string',
   },
 };
-exports.handler = (argv) => {
+exports.handler = argv => {
   const requiredOptions = ['id', 'login'];
 
   const params = cmdHelpers.buildParams(argv, requiredOptions);

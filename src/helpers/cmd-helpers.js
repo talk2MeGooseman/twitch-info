@@ -12,7 +12,7 @@ const yargs = require('yargs');
 exports.buildParams = (argv, reqOptions, addOptions = []) => {
   const params = new URLSearchParams();
 
-  const foundRequired = reqOptions.find((opt) => {
+  const foundRequired = reqOptions.find(opt => {
     if (argv[opt] && argv[opt].length > 0) {
       params.append(opt, argv[opt]);
       return true;
@@ -21,11 +21,14 @@ exports.buildParams = (argv, reqOptions, addOptions = []) => {
   });
 
   if (reqOptions.length > 0 && !foundRequired) {
-    console.log(reqOptions.join(' or '), 'option is required, use --help for more details.');
+    console.log(
+      reqOptions.join(' or '),
+      'option is required, use --help for more details.'
+    );
     return null;
   }
 
-  addOptions.forEach((opt) => {
+  addOptions.forEach(opt => {
     if (argv[opt] && argv[opt].length > 0) {
       params.append(opt, argv[opt]);
     }

@@ -17,7 +17,7 @@ exports.builder = {
   ...TwitchAPI.GAME_ID_OPTION,
   ...TwitchAPI.FIRST_OPTION,
 };
-exports.handler = (argv) => {
+exports.handler = argv => {
   const requiredOptions = ['broadcaster_id', 'game_id', 'clip_id'];
   const optionalOptions = ['first'];
 

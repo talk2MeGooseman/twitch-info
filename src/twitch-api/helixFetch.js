@@ -22,8 +22,8 @@ module.exports = function helixFetch(path, params = null) {
       'Client-ID': TwitchApi.CLIENT_ID,
     },
   })
-    .then((res) => res.json())
-    .then((json) => {
+    .then(res => res.json())
+    .then(json => {
       console.log(JSON.stringify(json, null, '  '));
     });
 };

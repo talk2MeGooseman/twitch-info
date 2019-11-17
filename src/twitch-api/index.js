@@ -4,7 +4,8 @@ exports.helixFetch = require('./helixFetch');
 exports.AFTER_OPTION = {
   after: {
     alias: 'a',
-    description: 'Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response.',
+    description:
+      'Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response.',
     type: 'string',
   },
 };
@@ -12,7 +13,8 @@ exports.AFTER_OPTION = {
 exports.FIRST_OPTION = {
   first: {
     alias: 'f',
-    description: 'Maximum number of objects to return. Maximum: 100. Default: 20.',
+    description:
+      'Maximum number of objects to return. Maximum: 100. Default: 20.',
     default: 20,
     type: 'string',
   },
@@ -21,7 +23,8 @@ exports.FIRST_OPTION = {
 exports.FULL_PAGINATION_OPTIONS = {
   before: {
     alias: 'b',
-    description: 'Cursor for backward pagination: tells the server where to start fetching the next set of results, in a multi-page response.',
+    description:
+      'Cursor for backward pagination: tells the server where to start fetching the next set of results, in a multi-page response.',
     type: 'string',
   },
   ...exports.AFTER_OPTION,
