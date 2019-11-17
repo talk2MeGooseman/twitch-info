@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 const { URL, URLSearchParams } = require('url');
-const TwitchApi = require('../twitch-api');
+const TwitchApi = require('.');
 
 const HELIX_BASE_URL = 'https://api.twitch.tv/helix/';
 

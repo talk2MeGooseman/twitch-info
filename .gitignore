@@ -243,3 +243,5 @@ typings/
 .next
 
 
+.DS_Store
+.keep

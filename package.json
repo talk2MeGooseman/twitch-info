@@ -11,8 +11,10 @@
     "url": "git+https://github.com/talk2megooseman/twitch-info.git"
   },
   "scripts": {
+    "test": "jest",
     "lint": "eslint ./",
-    "lint-fix": "eslint ./ --fix"
+    "lint-fix": "eslint ./ --fix",
+    "watch": "jest --watch"
   },
   "keywords": [
     "npx",
@@ -24,9 +26,7 @@
   "license": "MIT",
   "files": [
     "cli.js",
-    "cmds/",
-    "helpers/",
-    "twitch-api/"
+    "src/"
   ],
   "dependencies": {
     "node-fetch": "^2.6.0",

@@ -4,7 +4,7 @@ const yargs = require('yargs');
 /**
  * Builds params object from reqOptions and options
  *
- * @param {yargs.Argv} argv  Arguments from yargs
+ * @param {yargs.argv} argv  Arguments from yargs
  * @param {Array<String>} reqOptions Required options for request
  * @param {Array<String>} [addOptions=null] Additional options for request
  * @returns

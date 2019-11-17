@@ -2,7 +2,7 @@
 const yargs = require('yargs');
 
 // eslint-disable-next-line no-unused-expressions
-yargs.commandDir('cmds')
+yargs.commandDir('src/cmds')
   .usage('\nQuickly look up information from the Twitch API using the CLI tool.\nUsage: twitch-info <command> [options]')
   .scriptName('twitch-info')
   .example('$0 users -l talk2megooseman', 'return the users information')

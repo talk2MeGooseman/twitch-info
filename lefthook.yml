@@ -13,4 +13,4 @@ pre-commit:
   commands:
     eslint:
       glob: "*.{js,ts}"
-      run: npm run eslint {staged_files}
+      run: npm run lint {staged_files}
