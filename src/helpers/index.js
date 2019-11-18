@@ -1,1 +1,1 @@
-exports.cmdHelpers = require('./cmd-helpers');
+exports.cmdHelpers = require('./cmd-helpers')

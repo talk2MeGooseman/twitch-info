@@ -1,8 +1,8 @@
-const fetch = require('node-fetch');
-const { URL, URLSearchParams } = require('url');
-const TwitchApi = require('.');
+const fetch = require('node-fetch')
+const { URL, URLSearchParams } = require('url')
+const TwitchApi = require('.')
 
-const HELIX_BASE_URL = 'https://api.twitch.tv/helix/';
+const HELIX_BASE_URL = 'https://api.twitch.tv/helix/'
 
 /**
  * Performs fetch request to helix <path> API endpoint
@@ -12,10 +12,10 @@ const HELIX_BASE_URL = 'https://api.twitch.tv/helix/';
  * @param {URLSearchParams} [params=null]
  */
 module.exports = function helixFetch(path, params = null) {
-  const url = new URL(HELIX_BASE_URL + path);
+  const url = new URL(HELIX_BASE_URL + path)
 
   if (url) {
-    url.search = new URLSearchParams(params).toString();
+    url.search = new URLSearchParams(params).toString()
   }
   fetch(url, {
     headers: {
@@ -24,6 +24,6 @@ module.exports = function helixFetch(path, params = null) {
   })
     .then(res => res.json())
     .then(json => {
-      console.log(JSON.stringify(json, null, '  '));
-    });
-};
+      console.log(JSON.stringify(json, null, '  '))
+    })
+}

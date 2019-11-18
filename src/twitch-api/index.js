@@ -1,5 +1,5 @@
-exports.CLIENT_ID = 'jwpse7kaeqzems1n3f0cmg0ltwxi8r';
-exports.helixFetch = require('./helixFetch');
+exports.CLIENT_ID = 'jwpse7kaeqzems1n3f0cmg0ltwxi8r'
+exports.helixFetch = require('./helixFetch')
 
 exports.AFTER_OPTION = {
   after: {
@@ -8,7 +8,7 @@ exports.AFTER_OPTION = {
       'Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response.',
     type: 'string',
   },
-};
+}
 
 exports.FIRST_OPTION = {
   first: {
@@ -18,7 +18,7 @@ exports.FIRST_OPTION = {
     default: 20,
     type: 'string',
   },
-};
+}
 
 exports.FULL_PAGINATION_OPTIONS = {
   before: {
@@ -29,7 +29,7 @@ exports.FULL_PAGINATION_OPTIONS = {
   },
   ...exports.AFTER_OPTION,
   ...exports.FIRST_OPTION,
-};
+}
 
 exports.GAME_ID_OPTION = {
   game_id: {
@@ -37,11 +37,11 @@ exports.GAME_ID_OPTION = {
     description: 'Get by game ID',
     type: 'string',
   },
-};
+}
 
 exports.USER_ID_OPTION = {
   user_id: {
     description: 'Returns data by specified user IDs.',
     type: 'string',
   },
-};
+}

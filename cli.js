@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const yargs = require('yargs');
+const yargs = require('yargs')
 
 // eslint-disable-next-line no-unused-expressions
 yargs
@@ -12,4 +12,4 @@ yargs
   .example('$0 user-follows --help', 'print user-follows command information')
   .demandCommand()
   .help()
-  .alias('h', 'help').argv;
+  .alias('h', 'help').argv

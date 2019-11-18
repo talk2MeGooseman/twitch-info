@@ -1,8 +1,8 @@
-const TwitchAPI = require('../twitch-api');
-const { cmdHelpers } = require('../helpers');
+const TwitchAPI = require('../twitch-api')
+const { cmdHelpers } = require('../helpers')
 
-exports.command = 'users';
-exports.desc = 'Gets information about one or more specified Twitch users.';
+exports.command = 'users'
+exports.desc = 'Gets information about one or more specified Twitch users.'
 exports.builder = {
   id: {
     description: 'User ID',
@@ -13,15 +13,15 @@ exports.builder = {
     description: 'User login name',
     type: 'string',
   },
-};
+}
 exports.handler = argv => {
-  const requiredOptions = ['id', 'login'];
+  const requiredOptions = ['id', 'login']
 
-  const params = cmdHelpers.buildParams(argv, requiredOptions);
+  const params = cmdHelpers.buildParams(argv, requiredOptions)
 
   if (!params) {
-    return;
+    return
   }
 
-  TwitchAPI.helixFetch('users', params);
-};
+  TwitchAPI.helixFetch('users', params)
+}

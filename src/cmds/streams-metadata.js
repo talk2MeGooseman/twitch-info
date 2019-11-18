@@ -1,9 +1,9 @@
-const TwitchAPI = require('../twitch-api');
-const { cmdHelpers } = require('../helpers');
+const TwitchAPI = require('../twitch-api')
+const { cmdHelpers } = require('../helpers')
 
-exports.command = 'streams-metadata';
+exports.command = 'streams-metadata'
 exports.desc =
-  'Gets information about active streams. Streams are returned sorted by number of current viewers, in descending order. Across multiple pages of results, there may be duplicate or missing streams, as viewers join and leave streams.';
+  'Gets information about active streams. Streams are returned sorted by number of current viewers, in descending order. Across multiple pages of results, there may be duplicate or missing streams, as viewers join and leave streams.'
 exports.builder = {
   language: {
     description: 'Stream language.',
@@ -16,15 +16,15 @@ exports.builder = {
   ...TwitchAPI.USER_ID_OPTION,
   ...TwitchAPI.GAME_ID_OPTION,
   ...TwitchAPI.FULL_PAGINATION_OPTIONS,
-};
+}
 exports.handler = argv => {
-  const optionalOptions = Object.keys(exports.builder);
+  const optionalOptions = Object.keys(exports.builder)
 
-  const params = cmdHelpers.buildParams(argv, [], optionalOptions);
+  const params = cmdHelpers.buildParams(argv, [], optionalOptions)
 
   if (!params) {
-    return;
+    return
   }
 
-  TwitchAPI.helixFetch('streams/metadata', params);
-};
+  TwitchAPI.helixFetch('streams/metadata', params)
+}

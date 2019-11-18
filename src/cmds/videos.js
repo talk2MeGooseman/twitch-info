@@ -1,9 +1,9 @@
-const TwitchAPI = require('../twitch-api');
-const { cmdHelpers } = require('../helpers');
+const TwitchAPI = require('../twitch-api')
+const { cmdHelpers } = require('../helpers')
 
-exports.command = 'videos';
+exports.command = 'videos'
 exports.desc =
-  'Gets games sorted by number of current viewers on Twitch, most popular first.';
+  'Gets games sorted by number of current viewers on Twitch, most popular first.'
 exports.builder = {
   id: {
     description: 'ID of the video being queried.',
@@ -35,9 +35,9 @@ exports.builder = {
       'Type of video. Valid values: "all", "upload", "archive", "highlight". Default: "all".',
     type: 'string',
   },
-};
+}
 exports.handler = argv => {
-  const requiredOptions = ['id', 'user_id', 'game_id'];
+  const requiredOptions = ['id', 'user_id', 'game_id']
   const optionalOptions = [
     'after',
     'before',
@@ -46,13 +46,13 @@ exports.handler = argv => {
     'period',
     'sort',
     'type',
-  ];
+  ]
 
-  const params = cmdHelpers.buildParams(argv, requiredOptions, optionalOptions);
+  const params = cmdHelpers.buildParams(argv, requiredOptions, optionalOptions)
 
   if (!params) {
-    return;
+    return
   }
 
-  TwitchAPI.helixFetch('videos', params);
-};
+  TwitchAPI.helixFetch('videos', params)
+}

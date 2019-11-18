@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-const yargs = require('yargs');
-const { URLSearchParams } = require('url');
+const yargs = require('yargs')
+const { URLSearchParams } = require('url')
 
 /**
  * Builds params object from reqOptions and options
@@ -11,29 +11,29 @@ const { URLSearchParams } = require('url');
  * @returns
  */
 exports.buildParams = (argv, reqOptions, addOptions = []) => {
-  const params = new URLSearchParams();
+  const params = new URLSearchParams()
 
   const foundRequired = reqOptions.find(opt => {
     if (argv[opt] && argv[opt].length > 0) {
-      params.append(opt, argv[opt]);
-      return true;
+      params.append(opt, argv[opt])
+      return true
     }
-    return false;
-  });
+    return false
+  })
 
   if (reqOptions.length > 0 && !foundRequired) {
     console.log(
       reqOptions.join(' or '),
       'option is required, use --help for more details.'
-    );
-    return null;
+    )
+    return null
   }
 
   addOptions.forEach(opt => {
     if (argv[opt] && argv[opt].length > 0) {
-      params.append(opt, argv[opt]);
+      params.append(opt, argv[opt])
     }
-  });
+  })
 
-  return params;
-};
+  return params
+}
